@@ -72,11 +72,11 @@ main {
 
 .accordeon {
   color: blue;
+s */
 }
 
 .accordeon_elemen {
   border-top: 2px solid #dedede;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
 }
@@ -85,9 +85,16 @@ main {
   appearance: none;
 }
 
-.accordeon_title {
-  font-weight: bold;
+.accordeon_label {
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accordeon_title {
+  width: 100%;
+  font-weight: bold;
   padding-bottom: 0.5em;
   padding-top: 0.5em;
   display: flex;
@@ -105,16 +112,16 @@ main {
   transform: rotate(45deg);
 }
 
-.accoredeon_input:checked ~ .accordeon_img {
+.accoredeon_input:checked ~ .accordeon_label > .accordeon_img {
   display: block;
   animation: show 1s;
 }
 
-.accoredeon_input:checked ~ .accordeon_title {
+.accoredeon_input:checked ~ .accordeon_label > .accordeon_title {
   color: black;
 }
 
-.accoredeon_input:checked ~ .accordeon_title > .accordeon_close {
+.accoredeon_input:checked ~ .accordeon_label > .accordeon_title > .accordeon_close {
   transform: rotate(0deg);;
 }
 
@@ -144,12 +151,12 @@ main {
     color: black;
   }
 
-  .accordeon_elemen:hover > .accordeon_img {
+  .accordeon_elemen:hover > .accordeon_label > .accordeon_img {
     display: block;
     animation: show 1s;
   }
   
-  .accordeon_elemen:hover > .accordeon_title > .accordeon_close {
+  .accordeon_elemen:hover > .accordeon_label > .accordeon_title > .accordeon_close {
     transform: rotate(0deg);
   }
 }
