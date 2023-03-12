@@ -98,7 +98,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  transition: color 0.5s;
+  transition: all 0.7s ease-in-out;
 }
 
 .accordeon_svg {
@@ -106,20 +106,22 @@ main {
 }
 
 .accordeon_close {
-  transition: all 1s ;
+  transition: all 0.7s ease-in-out;
   transform: rotate(45deg);
 }
 
 .accordeon_img {
-  max-width: 50%;
+  max-width: 0%;
   align-self: center;
-  display: none;
   padding-bottom: 0.5rem;
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
 }
 
 .accoredeon_input:checked ~ .accordeon_label > .accordeon_img {
-  display: block;
-  animation: show 1s;
+  opacity: 1;
+  max-width: 50%;
+  animation: show 0.7s ease-in-out;
 }
 
 .accoredeon_input:checked ~ .accordeon_label > .accordeon_title {
@@ -145,8 +147,18 @@ main {
 }
 
 @media (hover: hover) and (pointer: fine) {
+
+  .accordeon_close {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+  }
+
   .accordeon:hover {
     color: black;
+  }
+
+  .accordeon:hover > .accordeon_element > .accordeon_label > .accordeon_title > .accordeon_close {
+    opacity: 1;
   }
 
   .accordeon_element:active > .accordeon_label > .accordeon_title {
@@ -158,8 +170,9 @@ main {
   }
 
   .accordeon_element:hover > .accordeon_label > .accordeon_img {
-    display: block;
-    animation: show 1s;
+    opacity: 1;
+    max-width: 50%;
+    animation: show 0.7s ease-in-out;
   }
   
   .accordeon_element:hover > .accordeon_label > .accordeon_title > .accordeon_close {
