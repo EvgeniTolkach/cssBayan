@@ -133,18 +133,18 @@ main {
 /* @media */
 
 @media (max-width: 820px) and (min-width: 321px) {
-
   body {
     font-size: 17px;
   }
 }
 
 @media (min-width: 821px) {
-
   body {
     font-size: 20px;
   }
+}
 
+@media (hover: hover) and (pointer: fine) {
   .accordeon:hover {
     color: black;
   }
